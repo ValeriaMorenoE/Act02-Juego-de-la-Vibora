@@ -23,6 +23,8 @@ def change(x, y):
     "Change snake direction."
     aim.x = x
     aim.y = y
+    food.x = randrange(-15, 15) * 10
+    food.y = randrange(-15, 15) * 10 
 
 
 def inside(head):
@@ -46,6 +48,7 @@ def move():
         print('Snake:', len(snake))
         food.x = randrange(-15, 15) * 10
         food.y = randrange(-15, 15) * 10
+
     else:
         snake.pop(0)
 
@@ -57,7 +60,6 @@ def move():
     square(food.x, food.y, 9, 'green')
     update()
     ontimer(move, 100)
-
 
 setup(420, 420, 370, 0)
 hideturtle()
